@@ -1,38 +1,83 @@
-.App {
+.header {
+  background-color: cornflowerblue;
+  color: azure;
+  padding: 10px 26px;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+}
+.phone-box {
+  margin: 0 40%;
+  margin-top: 60px;
+}
+.gird {
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  justify-items: center;
+  column-gap: 10px;
+  row-gap: 15px;
+}
+
+.number {
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  padding: 10px;
+  font-size: 2rem;
+  font-weight: 900;
+  width: 40px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.number:active {
+  background-color: darkgrey;
+  box-shadow: 0 1px 5px rgb(0 0 0 / 0.2);
+  transform: translateY(4px);
+}
+
+.number-input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 20px 0;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid black;
+  font-size: 1.5rem;
+}
+
+.button {
+  padding: 8px 16px;
+  color: white;
+  width: 10%;
+  text-align: center;
+  margin: 20px auto;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 700;
+}
+.call {
+  border-radius: 50%;
+  background-color: green;
+}
+.in-call {
+  border-radius: 50%;
+  background-color: red;
+}
+.button:active {
+  opacity: 0.5;
+  box-shadow: 0 1px 5px rgb(0 0 0 / 0.2);
+  transform: translateY(4px);
+}
+
+.user-state {
+  padding: 8px 16px;
+  border: 1px solid black;
+  border-radius: 10px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.timer {
+  text-align: center;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.connect-button {
+  background-color: green;
 }

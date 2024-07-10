@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import Phone from "./Phone";
+import { getToken } from "./services";
 
-function App() {
+const App = () => {
+  const [token, setToken] = useState("");
+
+  const init = async () => {
+    const token = (await getToken()).data.token;
+    setToken(token);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <div className="header"> Voice Caller </div>
+      {token ? (
+        <div className="phone-box">
+          <Phone token={token} />
+        </div>
+      ) : (
+        <div className="connect-button button" onClick={() => init()}>
+          Connect
+        </div>
+      )}
     </div>
   );
-}
+};
 
 export default App;
