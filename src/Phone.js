@@ -137,7 +137,7 @@ const Phone = ({ token }) => {
 
         call.on("disconnect", () => {
           console.log("The call has been disconnected.");
-          fetchRecordingUrl(call.parameters.CallSid);
+        //   fetchRecordingUrl(call.parameters.CallSid);
           setUserState(USER_STATE.END_CALL);
           setConnection(null);
         });
@@ -154,28 +154,9 @@ const Phone = ({ token }) => {
     }
   };
 
-  const fetchRecordingUrl = (callSid) => {
-    // Replace 'YOUR_TWILIO_ACCOUNT_SID' and 'YOUR_TWILIO_AUTH_TOKEN' with your actual credentials
-    const baseUrl = `https://api.twilio.com/2010-04-01/Accounts/AC685ee4ca81febfb3df4974b3160a85f8/Recordings/${callSid}.mp3`;
-
-    fetch(baseUrl, {
-      method: "GET",
-      headers: {
-        Authorization: `Basic ${btoa(
-          "AC685ee4ca81febfb3df4974b3160a85f8:c30ab9f2331c58a922e38ea1d91bc997"
-        )}`,
-        "Content-Type": "application/x-www-form-urlencoded",
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("Recording fetched successfully:", data);
-        // setRecordingUrl(data.uri);
-      })
-      .catch((error) => {
-        console.error("Failed to fetch recording:", error);
-      });
-  };
+//   const fetchRecordingUrl = (callSid) => {
+//     // Replace 'YOUR_TWILIO_ACCOUNT_SID' and 'YOUR_TWILIO_AUTH_TOKEN' with your actual credentials
+//   };
 
   console.log("userState=========", userState);
 
