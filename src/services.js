@@ -6,4 +6,7 @@ const Instance = axios.create({
 
 const getToken = () => Instance({ method: "GET", url: "/api/token" });
 
-export { getToken };
+const startRecording = () =>
+  Instance({ method: "GET", url: "/api/startRecording" });
+
+export { getToken, startRecording };
